@@ -80,52 +80,105 @@
 }
 
 
-.column-rows {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  font-weight: bold;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 6px;
-  margin-bottom: 8px;
-  text-align: center;
-  padding-left: 20px;
+.column-rows, .class-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 8px 0;
 }
 
+.column-rows {
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+  margin-bottom: 8px;
+}
+
+.class-row {
+  border-bottom: 1px solid #ddd;
+}
 
 .data-rows {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
-
-
-.class-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
-  padding: 6px 0;
-  border-bottom: 1px solid #eee;
+.main-dashboard-container {
+  display: flex; 
+  justify-content: space-around; 
+  align-items: flex-start;
+  padding: 10px; 
+  padding-left: calc(150px + 40px);
+  margin-bottom: 20px; 
+  width: calc(100% - 150px - 40px);
+  box-sizing: border-box;
 }
-
 .list-container {
+  flex: 1 1 400px;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+
+
+}
+.data-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  gap: 50px;
+}
+
+.bar-container, .line-container {
+  background-color: palegreen;
   width: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
-  opacity: unset;
+  border-radius: 20px;
+  padding-right: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
 
 }
 
 .card-container {
   display: flex;
+  flex-direction: row;
   gap: 30px;
-  background-color: rgba(128, 128, 128, 0.7); /* gray with 70% opacity */
-  opacity: unset; /* remove opacity */
-  align-items: center;
+  padding-left: 20px;
+  margin-right: px;
+}
+.card {
+  display: flex;
+  flex-wrap: wrap; 
   justify-content: center;
+  align-items: center; 
+  gap: 20px; 
+  background-color: rgba(128, 128, 128, 0.7);
   border-radius: 20px;
+  padding: 15px;
   font-size: 100%;
+  width: 150px;
   font-weight: bold;
 }
 
+
+
+h3 {
+  text-align: center;
+}
+
+.details-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  justify-content: center;
+  margin-left: calc(150px + 80px);
+  margin-right: calc(150px + 80px);
+  background-color: gray;
+  color: black;
+  border-radius: 20px;
+  padding-right: 20px;
+  box-shadow: 0 0 12px 15px rgba(238, 96, 96, 0.88);
+
+
+}

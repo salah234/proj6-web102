@@ -29,7 +29,7 @@ const Card = ({data, value, type}) => {
         {value === "max_temp" || value === "min_temp" || value === "temp" ? (
             <>
             <div className="card">
-             <p>{Math.trunc(todayData[value] * 9/5 + 32)}°F</p>
+             <p>{todayData[value]} °F</p>
              <p>{type}</p>
              </div>
             </>

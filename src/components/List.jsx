@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom'
 
 
 
@@ -59,6 +60,7 @@ const List = ({data}) => {
                     <div><strong>☀️ Humidity</strong></div>
                     <div><strong>🌡️ Temp</strong></div>
                     <div><strong>☔ Precipitation</strong></div>
+                    <div><strong>☔ Details</strong></div>
                 </div>
                 <div className="data-rows">
                     {finalFilter.slice(0, 10).map((day) => (
@@ -66,9 +68,12 @@ const List = ({data}) => {
                         <div>{day.datetime}</div>
                         <div>{day.rh}%</div>
                         <div>
-                            {Math.trunc(day.temp * 9 / 5 + 32)}°F
+                            {Math.trunc(day.temp)}°F
                         </div>
-                        <div>{day.precip} mm</div>
+                        <div>{day.precip.toFixed(1)} in</div>
+                        <div>
+                            <Link to={`/details/${day.datetime}`}>🔗</Link>
+                        </div>
                         </div>
                     ))}
                 </div>
